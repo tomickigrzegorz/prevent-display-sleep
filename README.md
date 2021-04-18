@@ -11,6 +11,9 @@ It should be remembered that the page does not turn off the device, which means 
 
 Note: The WakeLock API does not work on all browsers. You can change it using the library [NoSleep.js](https://github.com/richtr/NoSleep.js/)
 
+<p align="center">
+  <img src="example.png">
+</p>
 
 ## Below is information for developers
 Unfortunately, just doing an iframe doesn't always happen, as many sites are prohibited from downloading to an iframe - [CORS](Cross-Origin Resource Sharing (CORS)). Obszedłem to przez użycie php a dokładnie [CURL](https://www.php.net/manual/en/book.curl.php)
