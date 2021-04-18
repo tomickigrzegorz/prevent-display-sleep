@@ -1,43 +1,25 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-  let wakeLockSentinel = null;
   const text = document.querySelector('.info');
   const more = document.querySelector('.more-less');
   const root = document.querySelector('input');
 
   const requestWakeLock = async () => {
-    if ('wakeLock' in navigator) {
-      try {
-        // Detect if Screen Wake Lock API is available
-        text.textContent = 'supported';
 
-        // Enable Screen Wake Lock API
-        wakeLockSentinel = await navigator.wakeLock.request('screen');
-        text.textContent = 'active';
+    try {
+      // Enable Screen Wake Lock API
+      const wakeLock = await navigator.wakeLock.request('screen');
 
-        // Add event listener for when Screen Wake Lock API is released
-        wakeLockSentinel.addEventListener('release', () => {
-          text.textContent = 'released';
-        });
-      } catch (err) {
-        console.error(err);
-      }
-    } else {
-      text.textContent = `${err}`;
+      // Add event listener for when Screen Wake Lock API is released
+      // wakeLock.addEventListener('release', () => {
+      // text.textContent = 'released';
+      // });
+    } catch (err) {
+      console.error(`${err.name}, ${err.message}`);
     }
   };
 
   requestWakeLock();
-
-  // const fetchData = async (url) => {
-  //   try {
-  //     const response = await fetch(url);
-  //     const data = await response.text();
-  //     return data;
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // }
 
   const createIframe = (url) => {
     let iframe = document.querySelector('iframe');
@@ -48,8 +30,6 @@ window.addEventListener('DOMContentLoaded', () => {
       .then(response => {
         iframe.contentWindow.document.write(response.data);
       });
-    // fetchData(api)
-    //   .then(data => iframe.contentWindow.document.write(data));
   }
 
   const loadSite = () => {
@@ -155,6 +135,8 @@ window.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('click', (event) => {
     const { target } = event;
     event.preventDefault();
+
+    requestWakeLock();
 
     if (target.className === 'load') {
       loadSite();

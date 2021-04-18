@@ -7,10 +7,10 @@ const { PRODUCTION } = process.env;
 
 const plugins = () => {
   return [
-    babel({
-      exclude: 'node_modules/**',
-      babelHelpers: 'bundled',
-    }),
+    // babel({
+    //   exclude: 'node_modules/**',
+    //   babelHelpers: 'runtime'
+    // }),
     PRODUCTION && terser(),
     !PRODUCTION && serve({ contentBase: 'docs' }),
     !PRODUCTION && livereload(),
