@@ -10,7 +10,7 @@ Clicking on the link here will load our remembered page.
 It should be remembered that the page does not turn off the device, which means that energy from the device is constantly being consumed. If you are done cooking close this page.
 
 Note: The WakeLock API does not work on all browsers. You can change it using the library [NoSleep.js](https://github.com/richtr/NoSleep.js/).
-The WakeLock API only works under https
+The WakeLock API only works under **https**
 
 <p align="center">
   <img src="example.png">
