@@ -16,7 +16,7 @@ Note: The WakeLock API does not work on all browsers. You can change it using th
 </p>
 
 ## Below is information for developers
-Unfortunately, just doing an iframe doesn't always happen, as many sites are prohibited from downloading to an iframe - [CORS](Cross-Origin Resource Sharing (CORS)). Obszedłem to przez użycie php a dokładnie [CURL](https://www.php.net/manual/en/book.curl.php)
+Unfortunately, just doing an iframe doesn't always happen, as many sites are prohibited from downloading to an iframe - [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). Obszedłem to przez użycie php a dokładnie [CURL](https://www.php.net/manual/en/book.curl.php)
 
 
 ## The first thing
@@ -31,9 +31,7 @@ Before the first use, clone this repository and install node dependencies:
 ```
 yarn
 ``` 
-
 or 
-
 ```
 npm install
 ```
