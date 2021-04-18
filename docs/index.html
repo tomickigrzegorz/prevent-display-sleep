@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WakeLock</title>
+    <link rel="stylesheet" href="style.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="icon-bin" viewBox="0 0 32 32">
+        <path
+          d="M4 10v20c0 1.1 0.9 2 2 2h18c1.1 0 2-0.9 2-2v-20h-22zM10 28h-2v-14h2v14zM14 28h-2v-14h2v14zM18 28h-2v-14h2v14zM22 28h-2v-14h2v14z">
+        </path>
+        <path
+          d="M26.5 4h-6.5v-2.5c0-0.825-0.675-1.5-1.5-1.5h-7c-0.825 0-1.5 0.675-1.5 1.5v2.5h-6.5c-0.825 0-1.5 0.675-1.5 1.5v2.5h26v-2.5c0-0.825-0.675-1.5-1.5-1.5zM18 4h-6v-1.975h6v1.975z">
+        </path>
+        <symbol id="icon-clear" viewBox="0 0 24 24">
+          <path
+            d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z">
+          </path>
+        </symbol>
+      </symbol>
+    </svg>
+    <div class="form">
+      <div class="info" style="display: none;"></div>
+      <form action="/" method="GET">
+        <div class="root-element">
+          <input type="text" autocapitalize="off" autocomplete="off" class="site" placeholder="load the page" name="url"
+            value="">
+          <div class="clear-data">
+            <svg class="clear">
+              <use xlink:href="#icon-clear"></use>
+            </svg>
+          </div>
+        </div>
+        <button class="load">load</button>
+        <button class="add-site">add</button>
+      </form>
+    </div>
+    <div class="frame">
+      <iframe frameborder="0" class="iframe-wrapper"></iframe>
+    </div>
+    <div class="sites">
+      <div class="more">
+        <div class="more-less">↑ show list</div>
+        <div class="count"></div>
+      </div>
+      <div class="site-container"></div>
+    </div>
+    <script src="wakelock.min.js"></script>
+  </body>
+
+</html>
