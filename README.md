@@ -19,6 +19,8 @@ The WakeLock API only works under **https**
 ## Below is information for developers
 Unfortunately, just doing an iframe doesn't always happen, as many sites are prohibited from downloading to an iframe - [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). I got around this by using php to be exact [CURL](https://www.php.net/manual/en/book.curl.php)
 
+## The easiest way to use
+Simply copy the `docs` folder to the desired location. Remember the website must have an `https` domain
 
 ## The first thing
 Install the Docker manual can be found here ->
