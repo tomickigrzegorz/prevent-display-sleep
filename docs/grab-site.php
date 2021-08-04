@@ -3,6 +3,7 @@
 $result = $_GET['url'];
 
 $url = $result;
+
 $ch1 = curl_init();
 curl_setopt($ch1, CURLOPT_URL, $url);
 curl_setopt($ch1, CURLOPT_HEADER, 0);
@@ -14,5 +15,17 @@ curl_setopt($ch1, CURLOPT_POST, 0);
 curl_setopt($ch1, CURLOPT_FOLLOWLOCATION, 20);
 
 $htmlContent = curl_exec($ch1);
+curl_close($ch1);
+
+// $urlHost = parse_url($result, PHP_URL_HOST);
+
+if (substr_count($htmlContent, 'data-src')) {
+  preg_match_all('@data-src="([^"]+)"@', $htmlContent, $images);
+  foreach ($images[0] as $image) {
+    $secureImg = str_replace('data-src', 'src', $image);
+    $htmlContent = str_replace($image, $secureImg, $htmlContent);
+  }
+};
+
 
 echo $htmlContent;
